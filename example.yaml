@@ -1,0 +1,48 @@
+options:
+  vendor: GC1
+  id1: id1
+  id2: id2
+  title: Pyside Project
+
+questions:
+- name: verified
+  order: 1
+  responses:
+    '1': 1
+    '2': 2
+
+- name: verified_other
+  order: 2
+  onlyif: {question: 1, equals: 2}
+  responses:
+    '1': 1
+    '2': 2
+
+- name: party
+  order: 2
+  onlyif: {question: 1, equals: 1}
+  responses:
+    'dem': 1
+    'gop': 2
+    'libertarian': 3
+    'other': 4
+
+- name: age_group
+  order: 3
+  responses:
+    '18-34': 1
+    '35-54': 2
+    '55+': 3
+    
+- name: confirm_zip
+  order: 4
+  responses:
+    'correct': 1
+    'incorrect': 2
+    
+- name: remove
+  order: 5
+  responses:
+    '1': 7
+ 
+
