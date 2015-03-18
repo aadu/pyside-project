@@ -1,9 +1,9 @@
 import sys
 import os
 import re
-from PySide import QtGui, QtCore
 import pandas as pd
 import numpy as np
+from PySide import QtGui, QtCore
 
 
 class ReturnsTreeView(QtGui.QTreeWidget):
@@ -175,7 +175,7 @@ class ReturnsDialog(QtGui.QWidget):
         return(unique_versions)
 
     def processReturns(self):
-        # container for combined files
+        # Container for combined files
         raw = pd.DataFrame()
         for f in self.returns:
             if not len(raw):

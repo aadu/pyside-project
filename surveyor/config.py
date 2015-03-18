@@ -2,7 +2,7 @@ from PySide import QtCore, QtGui
 import formencode
 import yaml
 import gc1
-from hilight import Highlighter
+from highlight import Highlighter
 
 
 class TreeWidgetItem(QtGui.QTreeWidgetItem):

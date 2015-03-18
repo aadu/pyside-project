@@ -75,7 +75,7 @@ if __name__ == '__main__':
     app = LogWidget()
     app.show()
     # Create thread that will listen on the other end of the
-    # queue, and send the text to the textedit in our application
+    #  queue, and send the text to the textedit in our application.
     thread = QtCore.QThread()
     my_receiver = MyReceiver(queue)
     my_receiver.mysignal.connect(app.append_text)

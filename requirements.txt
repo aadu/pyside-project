@@ -1,0 +1,5 @@
+PySide>=1.0.7
+numpy>=1.9.0
+pandas>=0.15.0
+formencode
+yaml

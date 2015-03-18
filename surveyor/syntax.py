@@ -1,8 +1,8 @@
-from PySide import QtCore, QtGui
 import formencode
 import yaml
 import gc1
-from hilight import Highlighter
+from PySide import QtCore, QtGui
+from highlight import Highlighter
 
 
 class TreeWidgetItem(QtGui.QTreeWidgetItem):
@@ -94,15 +94,6 @@ class MainWindow(QtGui.QMainWindow):
             self.label2.setText(str(exc))
             print(exc)
 
-    def about(self):
-        QtGui.QMessageBox.about(self, "About Syntax Highlighter",
-                                ("<p>The <b>Syntax Highlighter</b> "
-                                 "example shows how to perform simple "
-                                 "syntax highlighting by subclassing the "
-                                 "QSyntaxHighlighter class and describing "
-                                 "highlighting rules using regular "
-                                 "expressions.</p>"))
-
     def newFile(self):
         self.editor.clear()
 
@@ -159,8 +150,6 @@ class MainWindow(QtGui.QMainWindow):
     def setupHelpMenu(self):
         helpMenu = QtGui.QMenu("&Help", self)
         self.menuBar().addMenu(helpMenu)
-        helpMenu.addAction("&About", self.about)
-        helpMenu.addAction("About &Qt", QtGui.qApp.aboutQt)
 
 
 if __name__ == '__main__':

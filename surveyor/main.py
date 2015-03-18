@@ -1,10 +1,10 @@
 import sys
-from PySide import QtGui, QtCore
 import config
 import returns
 import gc1
 import logger
 import queue
+from PySide import QtGui, QtCore
 
 
 class RunGC1Macro(QtCore.QObject):
@@ -52,7 +52,7 @@ class MainWindow(QtGui.QMainWindow):
         self.thread.start()
 
     def createLogo(self):
-        logo = QtGui.QPixmap('0ptimusLogo_Charcoal.png')
+        logo = QtGui.QPixmap('static/0ptimusLogo_Charcoal.png')
         logo = logo.scaled(200, 200, QtCore.Qt.KeepAspectRatio)
         optimus_logo = QtGui.QLabel(self)
         optimus_logo.setPixmap(logo)
@@ -130,7 +130,7 @@ class MainWindow(QtGui.QMainWindow):
         self.toolbar = self.addToolBar('Returns')
         self.toolbar.setObjectName("returns_toolbar")
         processReturns = QtGui.QAction(
-                                       QtGui.QIcon('circleright32.png'),
+                                       QtGui.QIcon('static/circleright32.png'),
                                        'Process Returns', self)
         processReturns.setShortcut('Ctrl+p')
         self.toolbar.addAction(processReturns)

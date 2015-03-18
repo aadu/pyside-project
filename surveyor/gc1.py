@@ -160,7 +160,7 @@ def load_returns(returns_path):
     dates = ['-'.join([str(d)[-4:], str(d)[0:2], str(d)[3:5]])
              for d in raw_dates]
     versions = files.str.extract(gc1_version_regex)
-    # container for combined files
+    # Container for combined files
     raw = pd.DataFrame()
     for f, d, v in zip(files, dates, versions):
         print("Loading {}".format(f))
@@ -418,8 +418,7 @@ def macro(data, config, verbose=False):
         else:
             raw = pd.concat([raw, raw_out[v]])
             labeled = pd.concat([labeled, labeled_out[v]])
-    # Transactional File
-    # Remove old data
+    # Transactional File; remove old data
     data = data.drop(qs, axis=1)
     trans = pd.merge(data, raw[valid_qs], left_index=True, right_index=True)
     if verbose:
@@ -428,9 +427,8 @@ def macro(data, config, verbose=False):
     trans.drop_duplicates(inplace=True)
     if verbose:
         print("Post: {}".format(len(trans)))
-    # CALL PERFORMANCE
+    # Call performance tracker
     sfile, cpt = call_performance_information(trans, labeled, ids, valid_qs)
-
     return([sfile, cpt])
 
 
